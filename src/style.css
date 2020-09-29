@@ -1,5 +1,12 @@
 html {
   font-family: Verdana,Geneva,sans-serif;
+  padding: 20px;
+}
+
+#main-input {
+  height: 25px;
+  line-height: 25px;
+  font-size: 20px;
 }
 
 .search-result {
