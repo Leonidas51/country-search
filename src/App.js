@@ -77,7 +77,6 @@ class App extends React.Component {
       }
     }
 
-    console.log(filtered);
     return filtered;
   }
 
@@ -124,6 +123,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <input
+          id="main-input"
           type="text"
           value={this.state.input_value}
           ref={this.input_ref}
