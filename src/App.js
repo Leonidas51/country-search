@@ -36,6 +36,16 @@ class App extends React.Component {
       error: ""
     })
 
+    if (!query.length) {
+      this.setState({
+        search_result: [],
+        search_result_sliced: [],
+        loading: false
+      })
+
+      return;
+    }
+
     fetch("https://restcountries.eu/rest/v2/all")
       .then(response => {
         if (response.status === 200) {
@@ -84,16 +94,11 @@ class App extends React.Component {
     const new_val = e.target.value;
 
     this.setState({
-      input_value: new_val
+      input_value: new_val,
+      loading: true
     })
-    
-    if (new_val.length) {
-      this.setState({
-        loading: true
-      })
 
-      this.fetchCountries(new_val);
-    }
+    this.fetchCountries(new_val);
   }
 
   onSelectChange(e) {
